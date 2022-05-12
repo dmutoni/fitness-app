@@ -76,6 +76,10 @@ export default function GetStarted() {
                 <Icon type='font-awesome' name='chevron-down' size={12} color={greyColorDark} tvParallaxProperties={undefined} />
                 <StatusBar style='auto' />
             </TouchableOpacity>
+            <View style={styles.getStartedContainer}>
+                <Text style={styles.buttonText}>Get started</Text>
+                <Icon type='font-awesome' name='long-arrow-right' size={20} color={tintColorDark} tvParallaxProperties={undefined} />
+            </View>
         </ImageBackground>
 
     </View>
@@ -139,6 +143,13 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         color: tintColorLight,
     },
+    getStartedContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        width: '40%',
+        top: '170%',
+        backgroundColor: 'rgba(52, 52, 52, 0)',
+    }
 })
 
 
