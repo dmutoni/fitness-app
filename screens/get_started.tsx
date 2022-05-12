@@ -63,19 +63,28 @@ export default function GetStarted() {
     }
 
     const data: { image: string, language: string }[] = [
-        { image: 'assets:/images/usa.png', language: 'English' },
-        { image: 'assets:/images/french.png', language: 'French' },
+        { image: '', language: 'English' },
+        { image: '', language: 'French' },
     ]
 
-    const tailwind = useTailwind();
     return <View style={styles.container}>
         <ImageBackground style={styles.image} source={require('../assets/images/girl-doing-sports.png')} resizeMode='cover'>
             <TouchableOpacity ref={DropdownButton} style={styles.button} onPress={toggleDropDown}>
                 {renderDropDown()}
+                <Image style={{ height: 20, width: 20 }} source={require('../assets/images/french.png')} height={10} width={20} />
                 <Text style={styles.buttonText}>{(selected && selected) || 'Eng'}</Text>
                 <Icon type='font-awesome' name='chevron-down' size={12} color={greyColorDark} tvParallaxProperties={undefined} />
                 <StatusBar style='auto' />
             </TouchableOpacity>
+
+            <View style={styles.middleContainer}>
+                <Text style={styles.myFit}>MY FIT</Text>
+                <View style={styles.descriptionContainer}>
+                    <Text style={styles.descriptionText}>This app will help you</Text>
+                    <Text style={styles.descriptionText}>Keep your body fit and strong.</Text>
+                </View>
+            </View>
+
             <View style={styles.getStartedContainer}>
                 <Text style={styles.buttonText}>Get started</Text>
                 <Icon type='font-awesome' name='long-arrow-right' size={20} color={tintColorDark} tvParallaxProperties={undefined} />
@@ -91,7 +100,9 @@ const styles = StyleSheet.create({
     },
     image: {
         flex: 1,
-        // justifyContent: 'center',
+        flexDirection: 'column',
+
+        justifyContent: 'space-around',
         alignItems: 'center'
         // width: '100%',
         // height: '100%',
@@ -118,7 +129,7 @@ const styles = StyleSheet.create({
     button: {
         flexDirection: 'row',
         alignItems: 'center',
-        top: '12%',
+        // top: '12%',
         justifyContent: 'center',
         backgroundColor: 'rgba(52, 52, 52, 0.2)',
         height: 40,
@@ -143,12 +154,30 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         color: tintColorLight,
     },
+    middleContainer: {
+        // top: '20%',
+        backgroundColor: 'rgba(52, 52, 52, 0)',
+    },
     getStartedContainer: {
         flexDirection: 'row',
         justifyContent: 'space-around',
         width: '40%',
-        top: '170%',
+        // top: '150%',
         backgroundColor: 'rgba(52, 52, 52, 0)',
+    },
+    myFit: {
+        fontSize: 80,
+        color: tintColorDark,
+    },
+    descriptionContainer: {
+        backgroundColor: 'rgba(52, 52, 52, 0)',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignContent: 'center',
+        alignItems: 'center',
+    },
+    descriptionText: {
+        color: tintColorDark
     }
 })
 
