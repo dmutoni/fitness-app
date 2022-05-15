@@ -1,13 +1,13 @@
 import { Text, View } from '../components/Themed';
 import { FlatList, Image, ImageBackground, Modal, StyleSheet, TouchableOpacity } from 'react-native';
-import { useTailwind } from 'tailwind-rn';
 import { FontAwesome } from '@expo/vector-icons';
 import React, { ReactElement, useRef, useState } from 'react';
 import { greyColorDark, tintColorDark, tintColorLight } from '../constants/Colors';
 import { Icon } from 'react-native-elements';
 import { StatusBar } from 'expo-status-bar';
+import { RootStackScreenProps } from '../types';
 
-export default function GetStarted() {
+export default function GetStarted({ navigation }: RootStackScreenProps<'GetStarted'>) {
 
     const DropdownButton = useRef<any>();
 
@@ -84,11 +84,13 @@ export default function GetStarted() {
                     <Text style={styles.descriptionText}>Keep your body fit and strong.</Text>
                 </View>
             </View>
-
+            <TouchableOpacity onPress={()=>navigation.navigate("SignIn")}>
             <View style={styles.getStartedContainer}>
                 <Text style={styles.buttonText}>Get started</Text>
                 <Icon type='font-awesome' name='long-arrow-right' size={20} color={tintColorDark} tvParallaxProperties={undefined} />
             </View>
+            </TouchableOpacity>
+           
         </ImageBackground>
 
     </View>
