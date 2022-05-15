@@ -149,6 +149,7 @@ const styles = StyleSheet.create({
     buttonText: {
         flex: 1,
         textAlign: 'center',
+        fontFamily: 'poppins-regular',
         color: tintColorDark
     },
     item: {
@@ -170,6 +171,7 @@ const styles = StyleSheet.create({
     myFit: {
         fontSize: 80,
         color: tintColorDark,
+        fontFamily: 'poppins-bold',
     },
     descriptionContainer: {
         backgroundColor: 'rgba(52, 52, 52, 0)',
@@ -179,7 +181,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     descriptionText: {
-        color: tintColorDark
+        color: tintColorDark,
+        fontFamily: 'poppins-regular',
     }
 })
 
